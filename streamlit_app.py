@@ -1,29 +1,24 @@
 import streamlit as st
+from sidebar import sidebar  # Import sidebar function
 
-# Page Title
-st.set_page_config(page_title="Customer Review Sentiment Analyzer", page_icon="📝")
+# Set up sidebar
+page = sidebar()
 
-# Welcome Section
-st.title("📊 Customer Review Sentiment Analyzer")
-st.subheader("Turn customer feedback into meaningful insights.")
+# Welcome Page Content
+if page == "🏠 Welcome":
+    st.title("🎉 Welcome to Customer Review Sentiment Analyzer")
+    st.write("Easily analyze customer feedback and gain insights!")
 
-st.write("""
-Welcome to the **Customer Review Sentiment Analyzer**!  
-This tool helps you analyze customer reviews from different businesses  
-to extract insights and improve decision-making.
-""")
+    st.image("welcome_banner.png", use_column_width=True)  # Add a nice banner image
+    st.write("Click on **Find Business** in the sidebar to get started.")
 
-# How It Works (Optional)
-with st.expander("🔎 How It Works"):
-    st.write("""
-    1. **Find a Business** – Search for a business and get its Place ID.
-    2. **Load & Clean Reviews** – Fetch and preprocess customer reviews.
-    3. **Analyze Sentiment** – Visualize trends, word clouds, and key insights.
-    4. **AI Recommendations** – Get suggestions to improve based on customer feedback.
-    5. **Download Reports** – Export raw reviews, cleaned data, and recommendations.
-    """)
-
-# Get Started Button
-if st.button("🚀 Get Started"):
-    st.switch_page("pages/1_Find_Business.py")  # Redirect to the next page
-
+elif page == "🔍 Find Business":
+    st.switch_page("pages/1_Find_Business.py")
+elif page == "📥 Load & Clean Reviews":
+    st.switch_page("pages/2_Load_Clean_Reviews.py")
+elif page == "📊 Sentiment Analysis":
+    st.switch_page("pages/3_Sentiment_Analysis.py")
+elif page == "🤖 AI Recommendations":
+    st.switch_page("pages/4_AI_Recommendations.py")
+elif page == "✅ Exit":
+    st.switch_page("pages/5_Exit.py")

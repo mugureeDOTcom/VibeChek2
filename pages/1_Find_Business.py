@@ -24,8 +24,10 @@ else:
 col1, col2 = st.columns([1, 1])
 with col1:
     if st.button("⬅ Back to Home"):
-        st.session_state.current_page = "🏠 Welcome"
+        st.query_params["page"] = "Welcome"
+        st.rerun()
 
 with col2:
     if st.button("➡ Proceed to Load Reviews"):
-        st.session_state.current_page = "📥 Load & Clean Reviews"
+        st.query_params["page"] = "Load & Clean Reviews"
+        st.rerun()

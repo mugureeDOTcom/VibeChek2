@@ -13,9 +13,11 @@ if page == "🏠 Welcome":
     st.write("Click on **Find Business** in the sidebar or use the button below to get started.")
 
     # Add a "Find Business" button
-    if st.button("🔍 Find Business"):
-        st.query_params["page"] = "Find Business"
-        st.rerun()
+if st.button("🔍 Find Business"):
+    st.query_params.clear()  # Clear existing params to avoid conflicts
+    st.query_params["page"] = "Find Business"
+    st.rerun()  # Refresh the app with new parameters
+
 
 # Navigation Based on Query Parameters
 if "page" in st.query_params:

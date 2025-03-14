@@ -22,7 +22,7 @@ if st.button("🔍 Find Business"):
 # Navigation Based on Query Parameters
 if "page" in st.query_params:
     if st.query_params["page"] == "🔍 Find Business":
-        st.experimental_set_query_params(page="Find Business")
+        st.experimental_set_query_params(page="🔍 Find Business")
         st.experimental_rerun()
     elif st.query_params["page"] == "Load & Clean Reviews":
         st.experimental_set_query_params(page="Load & Clean Reviews")

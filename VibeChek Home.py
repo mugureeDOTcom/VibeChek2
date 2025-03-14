@@ -14,7 +14,7 @@ if "page" not in st.session_state:
 
 # --- Page Routing ---
 if st.session_state.page == "🏠 Welcome":
-    st.title("🎉 Welcome to Customer Review Sentiment Analyzer")
+    st.title("🎉 Welcomec to Customer Review Sentiment Analyzer")
     st.write("Easily analyze customer feedback and gain insights!")
 
     st.image("media/welcome.webp", use_container_width=True)

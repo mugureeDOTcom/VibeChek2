@@ -2,9 +2,16 @@ import streamlit as st
 
 def sidebar():
     st.sidebar.title("📌 Navigation")
+
+    # Sidebar Navigation
     page = st.sidebar.radio(
-        "Go to",
-        ["🏠 Welcome", "🔍 Find Business", "📥 Load & Clean Reviews", "📊 Sentiment Analysis", "🤖 AI Recommendations", "✅ Exit"]
+        "Go to:",
+        ["🏠 Welcome", "🔍 Find Business", "📥 Load & Clean Reviews",
+         "📊 Sentiment Analysis", "🤖 AI Recommendations", "✅ Exit"]
     )
 
-    return page  # This will be used to navigate between pages
+    # Update query parameters based on selection
+    st.query_params["page"] = page
+    st.rerun()
+
+    return page

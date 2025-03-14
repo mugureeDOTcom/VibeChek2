@@ -9,9 +9,12 @@ if page == "🏠 Welcome":
     st.title("🎉 Welcome to Customer Review Sentiment Analyzer")
     st.write("Easily analyze customer feedback and gain insights!")
 
-    st.image("media/welcome.webp", use_container_width=True)
-  # Add a nice banner image
-    st.write("Click on **Find Business** in the sidebar to get started.")
+    st.image("media/welcome.webp", use_container_width=True)  # Add a nice banner image
+    st.write("Click on **Find Business** in the sidebar or use the button below to get started.")
+
+    # Add a "Find Business" button
+    if st.button("🔍 Find Business"):
+        st.switch_page("pages/1_Find_Business.py")  # Redirect to Find Business page
 
 elif page == "🔍 Find Business":
     st.switch_page("pages/1_Find_Business.py")

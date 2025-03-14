@@ -7,7 +7,7 @@ st.write("Search for a business, get its Place ID, and analyze its customer revi
 if st.query_params.get("page") != "Find Business":
     st.query_params["page"] = "Find Business"
     st.rerun()
-    
+
 # Embedded Google Place ID Finder (iframe)
 st.write("Use the embedded map below to find your business and copy its Place ID.")
 st.markdown("""
@@ -27,7 +27,7 @@ else:
 col1, col2 = st.columns([1, 1])
 with col1:
     if st.button("⬅ Back to Home"):
-        st.query_params["page"] = "streamlit_app.py"
+        st.query_params["page"] = "🏠 Welcome"
         st.rerun()
 
 with col2:

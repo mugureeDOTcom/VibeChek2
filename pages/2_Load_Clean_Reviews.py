@@ -2,8 +2,9 @@ import streamlit as st
 import pandas as pd
 import requests
 
-# SERP API Key
-SERP_API_KEY = "YOUR_SERP_API_KEY"
+# Load API key securely from Streamlit secrets
+SERP_API_KEY = st.secrets["serpapi"]["api_key"]
+
 
 st.title("📂 Load & Clean Reviews")
 

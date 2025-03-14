@@ -9,7 +9,8 @@ if page == "🏠 Welcome":
     st.title("🎉 Welcome to Customer Review Sentiment Analyzer")
     st.write("Easily analyze customer feedback and gain insights!")
 
-    st.image("welcome_banner.png", use_column_width=True)  # Add a nice banner image
+    st.image("media/welcome.webp", use_container_width=True)
+  # Add a nice banner image
     st.write("Click on **Find Business** in the sidebar to get started.")
 
 elif page == "🔍 Find Business":

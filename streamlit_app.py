@@ -1,6 +1,10 @@
 import streamlit as st
 from sidebar import sidebar  # Import sidebar function
 
+# Initialize session state for navigation
+if "current_page" not in st.session_state:
+    st.session_state.current_page = "🏠 Welcome"
+
 # Set up sidebar
 page = sidebar()
 
@@ -14,15 +18,21 @@ if page == "🏠 Welcome":
 
     # Add a "Find Business" button
     if st.button("🔍 Find Business"):
-        st.switch_page("pages/1_Find_Business.py")  # Redirect to Find Business page
+        st.session_state.current_page = "🔍 Find Business"
 
-elif page == "🔍 Find Business":
+# Page Routing Based on Session State
+if st.session_state.current_page == "🔍 Find Business":
+    st.experimental_set_query_params(page="find_business")  # Preserves page state
     st.switch_page("pages/1_Find_Business.py")
-elif page == "📥 Load & Clean Reviews":
+elif st.session_state.current_page == "📥 Load & Clean Reviews":
+    st.experimental_set_query_params(page="load_clean_reviews")
     st.switch_page("pages/2_Load_Clean_Reviews.py")
-elif page == "📊 Sentiment Analysis":
+elif st.session_state.current_page == "📊 Sentiment Analysis":
+    st.experimental_set_query_params(page="sentiment_analysis")
     st.switch_page("pages/3_Sentiment_Analysis.py")
-elif page == "🤖 AI Recommendations":
+elif st.session_state.current_page == "🤖 AI Recommendations":
+    st.experimental_set_query_params(page="ai_recommendations")
     st.switch_page("pages/4_AI_Recommendations.py")
-elif page == "✅ Exit":
+elif st.session_state.current_page == "✅ Exit":
+    st.experimental_set_query_params(page="exit")
     st.switch_page("pages/5_Exit.py")

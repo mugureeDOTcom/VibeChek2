@@ -12,11 +12,10 @@ if page == "🏠 Welcome":
     st.image("media/welcome.webp", use_container_width=True)
     st.write("Click on **Find Business** in the sidebar or use the button below to get started.")
 
-    # Add a "Find Business" button
+    # Fix the Find Business button navigation
 if st.button("🔍 Find Business"):
-    st.query_params.clear()  # Clear existing params to avoid conflicts
-    st.query_params["page"] = "🔍 Find Business"
-    st.rerun()  # Refresh the app with new parameters
+    st.switch_page("pages/1_Find_Business.py")  # Directly go to the page
+
 
 
 # Navigation Based on Query Parameters

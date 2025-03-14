@@ -23,12 +23,12 @@ if place_id:
 else:
     st.warning("⚠️ No Place ID entered yet.")
 
-# Navigation Buttons
+# Fix Back to Home navigation
 col1, col2 = st.columns([1, 1])
 with col1:
     if st.button("⬅ Back to Home"):
-        st.query_params["page"] = "🏠 Welcome"
-        st.rerun()
+        st.switch_page("streamlit_app.py")  # Ensure correct home path
+
 
 with col2:
     if st.button("➡ Proceed to Load Reviews"):

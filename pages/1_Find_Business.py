@@ -1,6 +1,5 @@
 import streamlit as st
 
-# Page Title
 st.title("🔍 Find Business")
 st.write("Search for a business, get its Place ID, and analyze its customer reviews.")
 
@@ -11,10 +10,9 @@ st.markdown("""
     width="100%" height="450"></iframe>
 """, unsafe_allow_html=True)
 
-# Input for Place ID (User can manually enter or copy)
+# Input for Place ID
 place_id = st.text_input("📍 Enter or Paste Place ID here:")
 
-# Button to Copy Place ID (Fake Copy to Clipboard Function)
 if place_id:
     st.success(f"✅ Place ID copied: `{place_id}`")
 else:

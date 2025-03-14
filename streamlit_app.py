@@ -1,17 +1,29 @@
 import streamlit as st
 
-st.set_page_config(page_title="Customer Review Sentiment Analyzer", layout="wide")
+# Page Title
+st.set_page_config(page_title="Customer Review Sentiment Analyzer", page_icon="📝")
 
+# Welcome Section
 st.title("📊 Customer Review Sentiment Analyzer")
-st.write("Welcome! This tool helps you analyze customer feedback using AI-driven sentiment analysis.")
+st.subheader("Turn customer feedback into meaningful insights.")
 
-st.markdown("### How It Works")
 st.write("""
-1. **Find a Business**: Enter the business name to get the Place ID.
-2. **Load Reviews**: Fetch, clean, and download reviews.
-3. **Analyze Reviews**: Get insights with dashboards, heatmaps, and word clouds.
-4. **AI Recommendations**: Receive business improvement suggestions.
-5. **Exit or Restart**: Wrap up or start over.
+Welcome to the **Customer Review Sentiment Analyzer**!  
+This tool helps you analyze customer reviews from different businesses  
+to extract insights and improve decision-making.
 """)
 
-st.sidebar.success("Use the sidebar to navigate between pages.")
+# How It Works (Optional)
+with st.expander("🔎 How It Works"):
+    st.write("""
+    1. **Find a Business** – Search for a business and get its Place ID.
+    2. **Load & Clean Reviews** – Fetch and preprocess customer reviews.
+    3. **Analyze Sentiment** – Visualize trends, word clouds, and key insights.
+    4. **AI Recommendations** – Get suggestions to improve based on customer feedback.
+    5. **Download Reports** – Export raw reviews, cleaned data, and recommendations.
+    """)
+
+# Get Started Button
+if st.button("🚀 Get Started"):
+    st.switch_page("pages/1_Find_Business.py")  # Redirect to the next page
+
